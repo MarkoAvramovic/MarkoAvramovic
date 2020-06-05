@@ -1,0 +1,99 @@
+#include<stdio.h>
+#include<math.h>
+double cena_armature=85 /*fiksna cena armature po kg*/;
+double funkcija(double F,double kom, double m,double cena,double ukupno);
+main()
+{
+double F /*(Debljina armature) svaki F ima vise kg po duznom metru */;
+
+double ukupno,kom,cena,m;
+double i,n;
+double sve_ukupno;
+
+
+printf("unesite koliko proizvoda zelite:");
+scanf("%lf", &n);
+
+for(i=1;i<=n;i++)
+{
+
+
+printf("unesite oznaku F (6, 8, 10, 12, 14 ili 16): ");
+scanf("%lf",&F);
+
+printf("unesite koliko zelite komada:");
+scanf("%lf",&kom);
+
+printf("unesite koliko metara ima armatura:");
+scanf("%lf",&m);
+
+ sve_ukupno+=funkcija( F, kom,  m,cena, ukupno);
+
+}
+
+ printf("\n\n\n============UKUPNO=============\n");
+ printf ("              %2.lf", sve_ukupno );
+  printf("\n===============================");
+
+}
+
+double funkcija(double F,double kom, double m,double cena,double ukupno)
+{
+
+
+if(F==6){
+
+cena=kom*m*0.230*cena_armature;
+printf("======F6========");
+printf("\n    %2.lf din\n",cena);
+printf("================\n");
+ukupno+=cena;
+}
+else if(F==8) {
+
+cena=kom*m*0.430*cena_armature;
+printf("======F8========");
+printf("\n    %2.lf din\n",cena);
+printf("================\n");
+ukupno+=cena;
+}
+else if(F==10){
+
+cena=kom*m*0.650*cena_armature;
+printf("======F10========");
+printf("\n    %2.lf din\n",cena);
+printf("================\n");
+ukupno+=cena;
+}
+else if(F==12){
+
+cena=kom*m*0.920*cena_armature;
+printf("======F12========");
+printf("\n    %2.lf din\n",cena);
+printf("================\n");
+ukupno+=cena;
+}
+else if(F==14){
+
+cena=kom*m*1.252*cena_armature;
+printf("======F14========");
+printf("\n    %2.lf din\n",cena);
+printf("================\n");
+ukupno+=cena;
+}
+else if (F==16){
+
+cena=kom*m*1.625*cena_armature;
+printf("======F16========");
+printf("\n    %2.lf din\n",cena);
+printf("================\n");
+ukupno+=cena;
+
+}
+else {
+
+printf("\n morate uneti kao sto je napisano\n");
+}
+return ukupno;
+}
+
